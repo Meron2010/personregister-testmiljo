@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Databaser
+*.db
+*.sqlite
+
+# macOS systemfiler
+.DS_Store
+
+# Miljövariabler
+.env

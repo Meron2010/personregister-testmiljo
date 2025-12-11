@@ -96,7 +96,7 @@ def anonymize_data():
     print("All user names and emails have been anonymized (GDPR compliant)")
 
 # ----------------------------
-# Huvudprogram
+# Mitt program
 # ----------------------------
 if __name__ == "__main__":
     init_database()

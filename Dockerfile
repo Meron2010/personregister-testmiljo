@@ -1,20 +1,19 @@
-# Use official Python slim image
 FROM python:3.9-slim
 
-# Set working directory
 WORKDIR /app
 
 # Copy application code
-COPY app.py .
+COPY app.py test_anonymiserings.py clear_data.py ./
 
 # Create directory for SQLite database
-RUN mkdir -p /data
+RUN mkdir -p /app/data
 
-# Install SQLite (optional, usually comes with Python, but ensures availability)
+# Optional: install sqlite3 CLI (Python module is enough)
 RUN apt-get update && apt-get install -y sqlite3 && rm -rf /var/lib/apt/lists/*
 
-# Expose a port if needed (optional)
-# EXPOSE 8000
+# Use a volume for persistent database
+VOLUME ["/app/data"]
 
-# Run the application
+# Default command: run the app interactively
 CMD ["python", "app.py"]
+

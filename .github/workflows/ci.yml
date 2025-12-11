@@ -1,18 +1,13 @@
 name: Build and Test
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -24,3 +19,7 @@ jobs:
           python -c "import sqlite3, os; print('All imports successful')"
           python -m py_compile app.py
           echo "Code compilation successful"
+
+      - name: Test GDPR anonymization
+        run: |
+          python test_gdpr.py

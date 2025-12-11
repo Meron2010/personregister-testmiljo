@@ -16,9 +16,5 @@ Ett enkelt system för att hantera testdata på ett GDPR-kompatibelt sätt.
 
 ## Kör med Docker
 
-1. Klona repot:
 
-```bash
-git clone <your-repo-url>
-cd personregister-testmiljo
 

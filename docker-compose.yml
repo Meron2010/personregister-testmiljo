@@ -5,9 +5,12 @@ services:
     build: .
     container_name: gdpr-user-registry
     volumes:
-      - database_data:/data
+      - database_data:/app/data    # Volym för persistent SQLite-databas
     environment:
-      - DATABASE_PATH=/data/test_users.db
+      - DATABASE_PATH=/app/data/test_users.db
+    stdin_open: true    # Gör så att du kan köra interaktivt
+    tty: true           # Behövs för Python-menu i app.py
 
 volumes:
   database_data:
+

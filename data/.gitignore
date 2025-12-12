@@ -1,13 +1,91 @@
+# -------------------------
 # Python cache
+# -------------------------
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
 
-# Databaser
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# -------------------------
+# Databaser (SQLite)
+# -------------------------
 *.db
 *.sqlite
+*.sqlite3
+data/
+data/*
 
-# macOS systemfiler
+# OBS: Om du vill behålla mappen "data/" men ignorera filer:
+# data/*
+# !data/.gitkeep
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+logs/
+debug.log
+
+# -------------------------
+# Docker
+# -------------------------
+# Docker build artifacts
+*.tar
+docker-compose.override.yml
+
+# -------------------------
+# macOS system files
+# -------------------------
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# Miljövariabler
+# -------------------------
+# Environment & secrets
+# -------------------------
 .env
+.env.*
+secrets/
+config/*.env
+
+# -------------------------
+# VS Code
+# -------------------------
+.vscode/
+*.code-workspace
+
+# -------------------------
+# GitHub Actions cache
+# -------------------------
+/actions-runner/
+*.cache
+
+# -------------------------
+# Coverage & testing
+# -------------------------
+.coverage
+htmlcov/
+coverage.xml
+pytest_cache/
+.cache/
+
+# -------------------------
+# Backup files
+# -------------------------
+*.bak
+*.swp
+*.tmp
+
+

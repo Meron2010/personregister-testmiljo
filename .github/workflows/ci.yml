@@ -7,19 +7,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Test imports and syntax
+      - name: Install dependencies
         run: |
-          python -c "import sqlite3, os; print('All imports successful')"
-          python -m py_compile app.py
-          echo "Code compilation successful"
+          pip install --upgrade pip
 
-      - name: Test GDPR anonymization
+      - name: Create database folder
+        run: |
+          mkdir -p data
+
+      - name: Run GDPR test
         run: |
           python test_gdpr.py
+

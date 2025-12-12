@@ -4,17 +4,15 @@ Ett enkelt system för att hantera testdata på ett GDPR-kompatibelt sätt.
 
 ## Funktioner
 
-- Skapa och initiera databas med testanvändare
+- Initiera databasen med testanvändare
 - Visa alla användare
-- Rensa all testdata (GDPR åtgärd 1)
-- Anonymisera användardata (GDPR åtgärd 2)
+- Anonymisera användardata
+- Ta bort personlig information (truncate)
+- Testa anonymisering
 
-## Förutsättningar
+## Projektstruktur
 
-- Docker och Docker Compose installerat
-- Python 3.9+ (om du kör utan Docker)
 
-## Kör med Docker
 
 
 
